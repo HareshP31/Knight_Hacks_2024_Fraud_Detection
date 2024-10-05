@@ -46,15 +46,15 @@ def generate_spending_data_for_month(year, month):
     category_limits = {
         'Housing': (1, 1),  # Only once
         'Subscriptions': (0, 2),  # Up to 2 times
-        'Food': (3, 6),  # Up to 6 times
+        'Food': (3, 30),  # Up to 6 times
         'Gas/Transportation': (1, 2),  # Up to 2 times
-        'Clothing/Personal': (1, 3),  # Up to 3 times
-        'Miscellaneous': (1, 3),  # Up to 3 times
+        'Clothing/Personal': (1, 8),  # Up to 3 times
+        'Miscellaneous': (1, 15),  # Up to 3 times
         'Suspicious': (0, 2)  # Up to 2 times
     }
 
     all_data = []  # List to hold all transactions
-    total_transactions = 30
+    total_transactions = np.random.randint(30, 69)
     rent_added = False  # Flag to track if Rent has been added
 
     # Create a list of dates for the specified month
