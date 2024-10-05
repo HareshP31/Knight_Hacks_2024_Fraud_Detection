@@ -1,0 +1,18 @@
+TransactionID,Category,TransactionAmount,Location,MerchantType,IsFraud,Timestamp
+1,Housing,579.6,Orlando,Rent,0,2024-10-01
+14,Food,12.39,Orlando,Restaurants,0,2024-10-03
+11,Suspicious,1023.3,Orlando,Jewelry Store,1,2024-10-04
+3,Gas/Transportation,64.51,Orlando,Lyft,0,2024-10-05
+13,Food,11.2,Orlando,Walmart,0,2024-10-09
+9,Food,10.03,Orlando,Trader Joe's,0,2024-10-12
+5,Clothing/Personal,38.55,Orlando,H&M,0,2024-10-14
+7,Gas/Transportation,69.29,Orlando,Shell,0,2024-10-16
+10,Food,25.74,Orlando,Local Deli,0,2024-10-20
+8,Food,14.56,Orlando,Local Deli,0,2024-10-21
+4,Suspicious,1857.23,Orlando,Casino,1,2024-10-22
+15,Miscellaneous,45.73,Orlando,Gift Shop,0,2024-10-23
+17,Miscellaneous,35.71,Orlando,Gift Shop,0,2024-10-24
+6,Clothing/Personal,55.29,Orlando,Sephora,0,2024-10-28
+12,Food,22.29,Orlando,Restaurants,0,2024-10-29
+2,Clothing/Personal,41.09,Orlando,Nike,0,2024-10-30
+16,Miscellaneous,41.03,Orlando,Gift Shop,0,2024-10-31
