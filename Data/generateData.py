@@ -22,14 +22,18 @@ fixed_prices = {
 
 }
 #Tiered pricing for other merchants
+#
 tiered_pricing = {
-    'Amazon Prime': [14.99, 139, 7.49, 69],
+    'Amazon Prime': [14.99, 7.49],
     'Netflix' : [6.99, 15.49, 19.99],
     'Spotify' : [9.99,12.99,15.99,4.99]
 }
-# Function to generate sequential timestamps over a certain period
-def generate_chronological_timestamps(start_date, num_transactions):
-    return [start_date + timedelta(hours=i) for i in range(num_transactions)]
+
+#Transaction volume limits for a month
+volume_limit_30_days = (40,100)
+
+#def generate_num_transactions_30_days
+
 
 # Function to generate spending data
 def generate_spending_data(num_transactions, start_date):
@@ -40,7 +44,7 @@ def generate_spending_data(num_transactions, start_date):
         'Category': [],
         'TransactionAmount': [],
         'Location': ['Orlando' for _ in range(num_transactions)],  # Fixed location (Orlando)
-        'Timestamp': generate_chronological_timestamps(start_date, num_transactions),  # Chronological timestamps
+        #'Timestamp':generate_num_transactions_30_days
         'MerchantType': [],
         'IsFraud': []
     }
@@ -80,7 +84,7 @@ def generate_spending_data(num_transactions, start_date):
 
     df = pd.DataFrame(data)
 
-    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+ 
     
 
 # Example usage: Generate data for 100 transactions
