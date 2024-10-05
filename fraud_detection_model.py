@@ -18,19 +18,19 @@ print("Columns in the DataFrame:", df.columns.tolist())
 df.columns = df.columns.str.strip()
 
 # Handle missing values in the 'amount' column
-df['amount'].fillna(df['amount'].mean(), inplace=True)
+df['TransactionAmount'].fillna(df['TransactionAmount'].mean(), inplace=True)
 
 # One hot encoding of the 'Category' and 'MerchantType' columns   
 encoder = OneHotEncoder()
-category_encoded = encoder.fit_transform(df[['category']])
+category_encoded = encoder.fit_transform(df[['Category']])
 merchant_encoded = encoder.fit_transform(df[['MerchantType']])
 
 # Create DataFrames from the encoded columns
-category_df = pd.DataFrame(category_encoded.toarray(), columns=encoder.get_feature_names_out(['category']))
+category_df = pd.DataFrame(category_encoded.toarray(), columns=encoder.get_feature_names_out(['Category']))
 merchant_df = pd.DataFrame(merchant_encoded.toarray(), columns=encoder.get_feature_names_out(['MerchantType']))
 
 # Concatenate the encoded categories and merchants back into the main DataFrame
-df = pd.concat([df, category_df, merchant_df], axis=1).drop(columns=['category', 'MerchantType'])
+df = pd.concat([df, category_df, merchant_df], axis=1).drop(columns=['Category', 'MerchantType'])
 
 # Split the data into features (X) and target variable (y)
 X = df.drop(columns=['TransactionID', 'IsFraud', 'Timestamp'])  # Exclude unnecessary columns
