@@ -1,6 +1,6 @@
 # Project: Risk Radar
 
-# Project Description
+## Project Description
 
 The increasing number of fraudulent transactions in today's financial landscape motivated us to create a solution that would empower individuals and businesses to quickly identify and act on suspicious activities. Our aim was to create an accessible and efficient tool to help improve financial security and reduce fraud risks.
 
@@ -30,7 +30,7 @@ Uses machine learning to analyze transaction data and determine the likelihood o
 
 We aim to further refine and nuance our data models by expanding the identifiers and features that contribute to fraud detection. By incorporating additional data points—such as user behavior patterns and location-based analytics—we plan to create a more comprehensive set of features for our machine learning model.
 
-1. **Clone the repository:**
+**Clone the repository:**
 
    ```bash
    git clone https://github.com/HareshP31/Knight_Hacks_2024_Fraud_Detection
