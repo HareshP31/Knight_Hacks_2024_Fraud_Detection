@@ -13,25 +13,33 @@ Uses machine learning to analyze transaction data and determine the likelihood o
 
 ## Features
 
-- List the key features of the project
-- Bullet points work well for this section
-- Mention unique functionality or aspects of the project
+- Generate button that creates a new csv file using our data generation algorithm based on the demographics we are looking for, then runs it through our model and displays the data
+- Upload button that allows user to upload their own csv file to run with our model and display the data
 
 ## Technologies
 
 - The project is built using Python and popular data science libraries.
 - Utilizes pandas and numpy for data generation and processing.
 - scikit-learn is used to train and evaluate a Random Forest model.
-- The model predicts the probability of fraud for each transaction.
-- The final model is deployed in a streamlined application using
-- Streamlit for a user-friendly interface.
+- The final model is deployed in a streamlined application using Streamlit for a user-friendly interface.
+- Used joblib to store model intelligence
+- Implemented faker for data generation
+
+## Challenges
+
+- There was a learning curve in understanding both the relevant libraries and Python's syntax.
+- We encountered issues reformatting datasets to facilitate the fraud detection model’s learning.
+- Handling missing values and encoding categorical features was particularly challenging.
+- Finding appropriate data to train the model was difficult (to solve the data issue, we created a data generation algorithm based on the spending habits of an average college student using data from the Federal Reserve Bank of Atlanta)
 
 ## Streacth Goals
 
-We aim to further refine and nuance our data models by expanding the identifiers and features that contribute to fraud detection. By incorporating additional data points—such as user behavior patterns and location-based analytics—we plan to create a more comprehensive set of features for our machine learning model.
+- Add more feature dectection (detect fraud based on location, time, etc.)
+- Add more flexibility with user upload (covert a pdf to a csv file/ covert csv file to the format our model needs)
+- Add more options to display the data in different ways
+- Add a chatbot to advise user on what to do next or answer questions
 
 **Clone the repository:**
 
    ```bash
    git clone https://github.com/HareshP31/Knight_Hacks_2024_Fraud_Detection
-   cd project-name
