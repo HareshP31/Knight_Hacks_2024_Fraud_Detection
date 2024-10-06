@@ -1,4 +1,4 @@
 TransactionID,Category,TransactionAmount,Location,MerchantType,IsFraud,Timestamp,risk_score
-22,Suspicious,1884.13,Orlando,Casino,1,2024-10-04,1.0
-23,Suspicious,1298.31,Orlando,Jewelry Store,1,2024-10-19,1.0
-25,Suspicious,1255.51,Orlando,Food,1,2024-10-22,1.0
+19,Suspicious,1641.66,Orlando,Food,1,2024-10-02,1.0
+2,Suspicious,1074.33,Orlando,Casino,1,2024-10-16,1.0
+5,Suspicious,1031.75,Orlando,Casino,1,2024-10-27,1.0
