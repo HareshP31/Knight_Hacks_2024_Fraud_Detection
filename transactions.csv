@@ -1,20 +1,22 @@
 TransactionID,Category,TransactionAmount,Location,MerchantType,IsFraud,Timestamp
-1,Housing,654.84,Orlando,Rent,0,2024-10-01
-19,Suspicious,1641.66,Orlando,Food,1,2024-10-02
-14,Food,21.8,Orlando,Restaurants,0,2024-10-03
-16,Clothing/Personal,37.27,Orlando,Sephora,0,2024-10-04
-11,Subscriptions,14.49,Orlando,Amazon Prime,0,2024-10-05
-3,Gas/Transportation,60.49,Orlando,Shell,0,2024-10-06
-13,Subscriptions,12.44,Orlando,Spotify,0,2024-10-07
-8,Miscellaneous,23.03,Orlando,Charity,0,2024-10-09
-7,Food,19.53,Orlando,Trader Joe's,0,2024-10-11
-18,Miscellaneous,34.27,Orlando,Lottery,0,2024-10-13
-2,Suspicious,1074.33,Orlando,Casino,1,2024-10-16
-9,Gas/Transportation,69.65,Orlando,Gas Station,0,2024-10-18
-6,Food,15.73,Orlando,Restaurants,0,2024-10-20
-17,Food,23.83,Orlando,Walmart,0,2024-10-22
-10,Miscellaneous,46.23,Orlando,Lottery,0,2024-10-23
-5,Suspicious,1031.75,Orlando,Casino,1,2024-10-27
-15,Miscellaneous,25.53,Orlando,General Store,0,2024-10-28
-4,Clothing/Personal,35.18,Orlando,H&M,0,2024-10-29
-12,Food,10.83,Orlando,Restaurants,0,2024-10-31
+1,Housing,622.76,Orlando,Rent,0,2024-10-01
+12,Food,19.45,Orlando,Trader Joe's,0,2024-10-02
+15,Suspicious,1035.61,Orlando,Night Club,1,2024-10-04
+11,Clothing/Personal,47.31,Orlando,Nike,0,2024-10-06
+6,Suspicious,1240.58,Orlando,Jewelry Store,1,2024-10-08
+4,Clothing/Personal,34.48,Orlando,H&M,0,2024-10-09
+17,Food,14.97,Orlando,Trader Joe's,0,2024-10-11
+16,Food,29.01,Orlando,Walmart,0,2024-10-14
+18,Miscellaneous,30.28,Orlando,Lottery,0,2024-10-15
+14,Subscriptions,12.78,Orlando,Amazon Prime,0,2024-10-16
+3,Food,10.02,Orlando,Restaurants,0,2024-10-18
+19,Gas/Transportation,53.22,Orlando,Gas Station,0,2024-10-19
+2,Miscellaneous,39.62,Orlando,Gift Shop,0,2024-10-20
+7,Food,19.56,Orlando,Restaurants,0,2024-10-21
+21,Clothing/Personal,1524.07,Orlando,Food,1,2024-10-22
+20,Gas/Transportation,65.24,Orlando,Shell,0,2024-10-24
+9,Clothing/Personal,57.26,Orlando,Nike,0,2024-10-25
+8,Miscellaneous,45.11,Orlando,Lottery,0,2024-10-26
+5,Clothing/Personal,40.34,Orlando,Sephora,0,2024-10-27
+10,Clothing/Personal,52.55,Orlando,H&M,0,2024-10-28
+13,Subscriptions,10.51,Orlando,Gym Membership,0,2024-10-30

@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os 
 from fraud_detection_model import run_model
-from fraud_detection_model import generate_spending_data_for_month
+# from fraud_detection_model import generate_spending_data_for_month
 
 # Initialize session state to store uploaded data and other variables
 if 'uploaded_data' not in st.session_state:
@@ -29,29 +29,12 @@ with st.sidebar:
 
     st.caption("<p style ='text-align:center'>Made with love</p>", unsafe_allow_html=True)
 
-# Function to plot line graph
-def plot_line_graph(df, x_col, y_col, file_name):
-    plt.figure(figsize=(10, 5))
-    plt.plot(df[x_col], df[y_col], marker='o')
-    plt.title(f'{file_name} - {y_col} vs {x_col}')
-    plt.xlabel(x_col)
-    plt.ylabel(y_col)
-    plt.grid()
-    st.pyplot(plt)
-
-# Use custom CSS to make the buttons bigger
-# st.markdown("""
-#     <style>
-#     .stButton button {
-#         width: 100%;
-#         height: 60px;
-#         font-size: 20px;
-#     }
-#     </style>
-# """, unsafe_allow_html=True)
-
-# Add buttons in each column
-
+def display_dataframes(full_df, review_df):
+    st.subheader("Full Transaction Data")
+    st.dataframe(full_df)
+    
+    st.subheader("Transactions to Review")
+    st.dataframe(review_df)
 
 # Save directory
 if not os.path.exists(temp_dir):
@@ -62,37 +45,25 @@ col1, col2 = st.columns([1, 1])
 
 
 with col1:
-    button1 = st.button('Generate')
+    if st.button('Generate'):
+        full_df, flagged_df = run_model()  # Get both DataFrames
 
-    if button1:
-        flagged_df = run_model() 
-
-        # Display the full DataFrame in Streamlit
-        #st.subheader("Full Transactions Data")
-        #st.dataframe(entire_df)
-
-        # Display the transactions to review
-        st.subheader("Transactions to Review")
-        st.dataframe(flagged_df)
-
-user_csv = st.file_uploader("**Upload your own CSV file here**", type="csv")
-
-if user_csv is not None:
-
-    # Define the temporary directory name
-    temp_dir = "temp"
-
-    # Check if the directory exists, if not create it
-    if not os.path.exists(temp_dir):
-        os.makedirs(temp_dir)
+        if full_df is not None and flagged_df is not None:
+            display_dataframes(full_df, flagged_df)
+with col2:
+    user_csv = st.file_uploader("**Upload your own CSV file here**", type=["csv"])
 
     if user_csv is not None:
-        file_path = os.path.join(temp_dir, user_csv.name)  # Save to the temp directory
-        with open(file_path, "wb") as f:
-            f.write(user_csv.getbuffer())
-        st.success(f"File '{user_csv.name}' uploaded and saved to '{temp_dir}'!")
+        df = pd.read_csv(user_csv)
+        df.columns = df.columns.str.strip()  # Strip whitespace from column names
 
-        # Now read the CSV file into a DataFrame
-        df = pd.read_csv(file_path)
-        st.write("Uploaded Data:")
-        st.dataframe(df)
+        # Debugging: Print columns to verify
+        # st.write("Columns in uploaded DataFrame:", df.columns.tolist())
+        
+        # Check for the 'TransactionAmount' column
+        if 'TransactionAmount' not in df.columns:
+            st.error("Error: 'TransactionAmount' column not found in the uploaded file.")
+        else:
+            full_df_uploaded, flagged_df_uploaded = run_model(df)  # Call your function with the uploaded DataFrame
+            st.success('Transactions processed and saved!')
+            display_dataframes(full_df_uploaded, flagged_df_uploaded)
