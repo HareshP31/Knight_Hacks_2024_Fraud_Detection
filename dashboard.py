@@ -3,6 +3,41 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from fraud_detection_model import csv_file 
+import toml
+
+# #Function to load the config from .toml file
+# def load_config(file_path):
+#     try:
+#         config = toml.load(file_path)
+#         return config
+#     except FileNotFoundError:
+#         st.error("Config file not found!")
+#         return None
+#     except toml.TomlDecodeError:
+#         st.error("Error decoding the config file!")
+#         return None
+
+# # # Load configuration
+# config = load_config("config.toml")
+
+# Custom CSS styling
+st.markdown("""
+            
+    <style>
+     body {
+         background-color: #F4F4F8;
+     }
+    /* File uploader styles */
+    .stFileUploader {
+        border: 3px solid #007BFF; /* Blue border */
+        border-radius: 30px; /* Rounded corners */
+        padding: 7px; /* Padding inside the uploader */
+    }
+    </style>
+            
+     """, unsafe_allow_html=True)
+
 
 # Initialize session state to store uploaded data and other variables
 if 'uploaded_data' not in st.session_state:
@@ -10,13 +45,14 @@ if 'uploaded_data' not in st.session_state:
 if 'file_name' not in st.session_state:
     st.session_state.file_name = ""
 
-
 temp_dir = "temp"
 
-st.title('Financial Fraud Detector!')
+st.title('Financial Fraud Detector:money_with_wings:')
+
+st.write('**Click Generate to Trigger Machine Learning with our Personal Dataset:smile:**')
 
 with st.sidebar:
-    st.write('*Welcome to your personal Financial Fraud Detector*')
+    st.markdown("<h4 style='color: #007BFF;'>Welcome to your personal Financial Fraud Detector</h4>", unsafe_allow_html=True)
 
     st.caption('''The financial fraud detector website enables users to upload transaction spreadsheets for analysis to identify potential fraud. 
                   It validates data, uses machine learning algorithms to detect suspicious patterns, and assigns risk scores to highlight concerning transactions. 
@@ -37,20 +73,33 @@ def plot_line_graph(df, x_col, y_col, file_name):
     plt.grid()
     st.pyplot(plt)
 
-# Use custom CSS to make the buttons bigger
-# st.markdown("""
-#     <style>
-#     .stButton button {
-#         width: 100%;
-#         height: 60px;
-#         font-size: 20px;
-#     }
-#     </style>
-# """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    .stButton button {
+        width: 80%;
+        height: 50px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        background-color: #007BFF; /* Your preferred blue color */
+        color: white; /* Text color */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+    .stButton button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-# Add buttons in each column
 
-
+# Function to automatically load a file
+def auto_upload_file(file_path):
+    if os.path.exists(file_path):
+        return pd.read_csv(file_path)  # Adjust if you need to handle other file types
+    else:
+        st.error("File not found!")
+        return None
+    
 # Save directory
 if not os.path.exists(temp_dir):
     os.makedirs(temp_dir)
@@ -62,12 +111,17 @@ col1, col2 = st.columns([1, 1])
 with col1:
     button1 = st.button('Generate')
 
+predefined_file_path = "transactions.csv"
+
 # Logic for button clicks
 if button1:
-    st.write("Click Proceed!")
-    st.button('Proceed')
+    dataf = auto_upload_file(predefined_file_path)
 
-user_csv = st.file_uploader("**Upload your own CSV file here**", type="csv")
+    if dataf is not None:
+        st.success(f"File '{predefined_file_path}' uploaded successfully!")
+        st.dataframe(dataf)
+
+user_csv = st.file_uploader("You can Also Upload Your Own Monthly Statement", type="csv", key="file_uploader")
 
 if user_csv is not None:
 
