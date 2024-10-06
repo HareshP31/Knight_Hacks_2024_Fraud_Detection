@@ -26,7 +26,7 @@ st.markdown("""
             
     <style>
      body {
-         background-color: #F4F4F8;
+         background-color: #FFFFFF;
      }
     /* File uploader styles */
     </style>
