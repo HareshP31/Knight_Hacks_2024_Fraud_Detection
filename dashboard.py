@@ -18,7 +18,7 @@ temp_dir = "temp"
 st.title('Financial Fraud Detector!')
 
 with st.sidebar:
-    st.write('*Welcome to your personal Financial Fraud Detector*')
+    st.write('**Welcome to your personal Financial Fraud Detector**')
 
     st.caption('''The financial fraud detector website enables users to upload transaction spreadsheets for analysis to identify potential fraud. 
                   It validates data, uses machine learning algorithms to detect suspicious patterns, and assigns risk scores to highlight concerning transactions. 
@@ -28,6 +28,40 @@ with st.sidebar:
     st.divider()
 
     st.caption("<p style ='text-align:center'>Made with love</p>", unsafe_allow_html=True)
+
+st.markdown("""
+    <style>
+    /* Styling for the sidebar */
+    .st-emotion-cache-1gwvy71.eczjsme12 {
+        background-color: #f0f0f5; /* Light gray background */
+        padding: 20px; /* Add padding */
+    }
+
+    /* Text inside the sidebar */
+    .st-emotion-cache-1gwvy71.eczjsme12 p, .st-emotion-cache-1gwvy71.eczjsme12 strong {
+        color: #333333; /* Dark text color */
+    }
+    
+    /* Styling for captions or centered text in the sidebar */
+    .st-emotion-cache-1l5t55b p {
+        text-align: center;
+        font-weight: bold;
+    }
+    .stButton button {
+        width: 80%;
+        height: 50px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        background-color: #007BFF; 
+        color: white;
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+    .stButton button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 def display_dataframes(full_df, review_df):
     st.subheader("Full Transaction Data")

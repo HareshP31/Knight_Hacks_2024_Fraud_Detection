@@ -1,22 +1,19 @@
 TransactionID,Category,TransactionAmount,Location,MerchantType,IsFraud,Timestamp
-1,Housing,622.76,Orlando,Rent,0,2024-10-01
-12,Food,19.45,Orlando,Trader Joe's,0,2024-10-02
-15,Suspicious,1035.61,Orlando,Night Club,1,2024-10-04
-11,Clothing/Personal,47.31,Orlando,Nike,0,2024-10-06
-6,Suspicious,1240.58,Orlando,Jewelry Store,1,2024-10-08
-4,Clothing/Personal,34.48,Orlando,H&M,0,2024-10-09
-17,Food,14.97,Orlando,Trader Joe's,0,2024-10-11
-16,Food,29.01,Orlando,Walmart,0,2024-10-14
-18,Miscellaneous,30.28,Orlando,Lottery,0,2024-10-15
-14,Subscriptions,12.78,Orlando,Amazon Prime,0,2024-10-16
-3,Food,10.02,Orlando,Restaurants,0,2024-10-18
-19,Gas/Transportation,53.22,Orlando,Gas Station,0,2024-10-19
-2,Miscellaneous,39.62,Orlando,Gift Shop,0,2024-10-20
-7,Food,19.56,Orlando,Restaurants,0,2024-10-21
-21,Clothing/Personal,1524.07,Orlando,Food,1,2024-10-22
-20,Gas/Transportation,65.24,Orlando,Shell,0,2024-10-24
-9,Clothing/Personal,57.26,Orlando,Nike,0,2024-10-25
-8,Miscellaneous,45.11,Orlando,Lottery,0,2024-10-26
-5,Clothing/Personal,40.34,Orlando,Sephora,0,2024-10-27
-10,Clothing/Personal,52.55,Orlando,H&M,0,2024-10-28
-13,Subscriptions,10.51,Orlando,Gym Membership,0,2024-10-30
+1,Housing,744.37,Orlando,Rent,0,2024-10-01
+12,Suspicious,1623.88,Orlando,Night Club,1,2024-10-02
+2,Gas/Transportation,55.97,Orlando,Lyft,0,2024-10-03
+13,Food,13.25,Orlando,Trader Joe's,0,2024-10-04
+4,Clothing/Personal,52.68,Orlando,Nike,0,2024-10-07
+10,Subscriptions,15.61,Orlando,Spotify,0,2024-10-08
+18,Housing,1984.75,Orlando,Food,1,2024-10-11
+5,Clothing/Personal,41.1,Orlando,H&M,0,2024-10-13
+9,Miscellaneous,45.61,Orlando,Lottery,0,2024-10-15
+11,Food,22.64,Orlando,Trader Joe's,0,2024-10-17
+6,Miscellaneous,31.97,Orlando,Gift Shop,0,2024-10-18
+7,Subscriptions,15.87,Orlando,Netflix,0,2024-10-20
+8,Miscellaneous,23.29,Orlando,General Store,0,2024-10-21
+3,Gas/Transportation,67.76,Orlando,Gas Station,0,2024-10-24
+16,Food,18.96,Orlando,Trader Joe's,0,2024-10-25
+14,Clothing/Personal,50.16,Orlando,Nike,0,2024-10-28
+17,Food,14.44,Orlando,Walmart,0,2024-10-30
+15,Suspicious,1917.03,Orlando,Casino,1,2024-10-31
