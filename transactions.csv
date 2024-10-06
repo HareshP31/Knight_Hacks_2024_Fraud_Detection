@@ -22,7 +22,7 @@ TransactionID,Category,TransactionAmount,Location,MerchantType,IsFraud,Timestamp
 18,Miscellaneous,36.03,Orlando,Gift Shop,0,2024-10-26
 15,Miscellaneous,44.22,Orlando,Gift Shop,0,2024-10-27
 6,Subscriptions,19.22,Orlando,Amazon Prime,0,2024-10-29
-20,Clothing/Personal,44.14,Orlando,Gap,0,2024-10-30
+20,Clothing/Personal,4444.14,Orlando,Gap,0,2024-10-30
 16,Gas/Transportation,64.2,Orlando,Gas Station,0,2024-10-31
 26,Food,24.15,Orlando,Walmart,0,2024-10-08
 27,Subscriptions,15.99,Orlando,Netflix,0,2024-10-09

@@ -35,7 +35,7 @@ price_ranges = {
 def calculate_risk_score(row):
     category = row['Category']
     amount = row['TransactionAmount']
-    
+
     if category not in price_ranges:
         return 0.0  # Default to 0 if category is unknown
     
@@ -56,6 +56,8 @@ def calculate_risk_score(row):
 # Apply the risk score calculation
 df['risk_score'] = df.apply(calculate_risk_score, axis=1)
 
+to_review = df[(df['risk_score'] > 0.7) | (df['Category'] == 'Suspicious')]
+
 # One hot encoding of the 'Category' and 'MerchantType' columns   
 encoder = OneHotEncoder()  
 encoded_columns = encoder.fit_transform(df[['Category', 'MerchantType', 'Location']])
@@ -65,7 +67,8 @@ encoded_df = pd.DataFrame(encoded_columns.toarray(), columns=encoder.get_feature
 
 # Concatenate the encoded categories and merchants back into the main DataFrame
 df = pd.concat([df, encoded_df], axis=1)
-df = df.drop(columns=['Category', 'MerchantType', 'Location'])
+df.drop(columns=['Category', 'MerchantType', 'Location'], inplace=True)
+
 
 # Split the data into features (X) and target variable (y)
 X = df.drop(columns=['TransactionID', 'IsFraud', 'Timestamp'])  # Exclude unnecessary columns
@@ -86,7 +89,7 @@ df_test = df.loc[X_test.index].copy()  # Ensure df_test is correctly created
 df_test['predicted_prob'] = predicted_probabilities[:, 1]  # Assign the probability of fraud
 
 # Identify transactions to review (predicted_prob > 0.5) and save to a new CSV file
-to_review = df_test[df_test['predicted_prob'] > 0.5]
+
 to_review.to_csv('transactions_to_review.csv', index=False)
 print("Transactions to review saved to 'transactions_to_review.csv'.")
 

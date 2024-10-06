@@ -1,1 +1,4 @@
-TransactionID,TransactionAmount,IsFraud,Timestamp,risk_score,Category_Clothing/Personal,Category_Food,Category_Gas/Transportation,Category_Housing,Category_Miscellaneous,Category_Subscriptions,Category_Suspicious,MerchantType_Amazon Prime,MerchantType_Casino,MerchantType_Charity,MerchantType_Gap,MerchantType_Gas Station,MerchantType_General Store,MerchantType_Gift Shop,MerchantType_Gym Membership,MerchantType_H&M,MerchantType_Local Deli,MerchantType_Lottery,MerchantType_Netflix,MerchantType_Night Club,MerchantType_Nike,MerchantType_Rent,MerchantType_Sephora,MerchantType_Shell,MerchantType_Trader Joe's,MerchantType_Walmart,Location_Orlando,predicted_prob
+TransactionID,Category,TransactionAmount,Location,MerchantType,IsFraud,Timestamp,risk_score
+13,Suspicious,874.57,Orlando,Casino,1,2024-10-16,1.0
+14,Suspicious,1515.11,Orlando,Night Club,1,2024-10-24,1.0
+20,Clothing/Personal,4444.14,Orlando,Gap,0,2024-10-30,0.9864990751866503
