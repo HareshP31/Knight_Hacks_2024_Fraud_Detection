@@ -1,13 +1,18 @@
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.metrics import confusion_matrix
+# import seaborn as sns FOR TESTING
+# import matplotlib.pyplot as plt FOR TESTING
+import joblib
+from generate_csv import generate_spending_data_for_month # IMPORT ALGORITHM
 
 # Load the dataset
 try:
-    df = pd.read_csv('transactions.csv')
+    csv_file = generate_spending_data_for_month(2024, 10)
+    df = pd.read_csv(csv_file)
     print("File loaded successfully!")
 except FileNotFoundError:
     print("Error: transactions.csv file not found. Please check the file path.")
@@ -74,12 +79,20 @@ df.drop(columns=['Category', 'MerchantType', 'Location'], inplace=True)
 X = df.drop(columns=['TransactionID', 'IsFraud', 'Timestamp'])  # Exclude unnecessary columns
 y = df['IsFraud']  # Target variable: IsFraud
 
+try:
+    model = joblib.load('fraud_detection_model.joblib')
+    print("Model loaded.")
+except FileNotFoundError:
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    print("No existing model found.")
+
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
 # Initialize and train a Random Forest model
-model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
+
+joblib.dump(model, 'fraud_detection_model.joblib')
 
 # Make predictions and get predicted probabilities
 predicted_probabilities = model.predict_proba(X_test)
@@ -89,7 +102,6 @@ df_test = df.loc[X_test.index].copy()  # Ensure df_test is correctly created
 df_test['predicted_prob'] = predicted_probabilities[:, 1]  # Assign the probability of fraud
 
 # Identify transactions to review (predicted_prob > 0.5) and save to a new CSV file
-
 to_review.to_csv('transactions_to_review.csv', index=False)
 print("Transactions to review saved to 'transactions_to_review.csv'.")
 
@@ -107,3 +119,12 @@ importances = model.feature_importances_
 feature_names = X_train.columns
 feature_importance_df = pd.DataFrame({'Feature': feature_names, 'Importance': importances})
 print(feature_importance_df.sort_values(by='Importance', ascending=False))
+''' 
+For Testing
+cm = confusion_matrix(y_test, y_pred)
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['Not Fraud', 'Fraud'], yticklabels=['Not Fraud', 'Fraud'])
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.title('Confusion Matrix')
+plt.show()
+'''
