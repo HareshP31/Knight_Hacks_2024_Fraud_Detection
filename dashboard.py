@@ -29,11 +29,6 @@ st.markdown("""
          background-color: #F4F4F8;
      }
     /* File uploader styles */
-    .stFileUploader {
-        border: 3px solid #007BFF; /* Blue border */
-        border-radius: 30px; /* Rounded corners */
-        padding: 7px; /* Padding inside the uploader */
-    }
     </style>
             
      """, unsafe_allow_html=True)
@@ -121,7 +116,8 @@ if button1:
         st.success(f"File '{predefined_file_path}' uploaded successfully!")
         st.dataframe(dataf)
 
-user_csv = st.file_uploader("You can Also Upload Your Own Monthly Statement", type="csv", key="file_uploader")
+st.write('**You Can Also Upload Your Own Monthly Statement**')
+user_csv = st.file_uploader("", type="csv", key="file_uploader")
 
 if user_csv is not None:
 

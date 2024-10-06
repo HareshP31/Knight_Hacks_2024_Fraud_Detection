@@ -1,20 +1,25 @@
 TransactionID,Category,TransactionAmount,Location,MerchantType,IsFraud,Timestamp
-1,Housing,566.9,Orlando,Rent,0,2024-10-01
-19,Subscriptions,1597.82,Orlando,Food,1,2024-10-02
-7,Miscellaneous,26.3,Orlando,Gift Shop,0,2024-10-04
-18,Food,18.61,Orlando,Walmart,0,2024-10-11
-14,Suspicious,1712.61,Orlando,Jewelry Store,1,2024-10-13
-10,Miscellaneous,32.81,Orlando,Charity,0,2024-10-15
-4,Food,13.45,Orlando,Local Deli,0,2024-10-16
-13,Clothing/Personal,58.05,Orlando,Gap,0,2024-10-17
-5,Food,17.89,Orlando,Walmart,0,2024-10-19
-8,Miscellaneous,37.6,Orlando,General Store,0,2024-10-20
-2,Subscriptions,18.61,Orlando,Gym Membership,0,2024-10-21
-12,Miscellaneous,36.29,Orlando,General Store,0,2024-10-22
-16,Food,19.74,Orlando,Local Deli,0,2024-10-23
-3,Gas/Transportation,62.52,Orlando,Uber,0,2024-10-24
-6,Subscriptions,14.63,Orlando,Amazon Prime,0,2024-10-25
-9,Suspicious,1115.56,Orlando,Casino,1,2024-10-26
-11,Gas/Transportation,65.15,Orlando,Uber,0,2024-10-27
-15,Miscellaneous,47.72,Orlando,Charity,0,2024-10-29
-17,Clothing/Personal,47.92,Orlando,H&M,0,2024-10-30
+1,Housing,614.05,Orlando,Rent,0,2024-10-01
+19,Clothing/Personal,46.2,Orlando,Nike,0,2024-10-02
+7,Subscriptions,15.31,Orlando,Spotify,0,2024-10-05
+11,Clothing/Personal,31.19,Orlando,H&M,0,2024-10-06
+2,Food,28.85,Orlando,Local Deli,0,2024-10-07
+3,Miscellaneous,28.11,Orlando,Lottery,0,2024-10-09
+17,Miscellaneous,25.53,Orlando,Gift Shop,0,2024-10-10
+9,Miscellaneous,38.47,Orlando,General Store,0,2024-10-11
+10,Food,11.09,Orlando,Walmart,0,2024-10-12
+16,Miscellaneous,25.84,Orlando,General Store,0,2024-10-13
+5,Miscellaneous,21.78,Orlando,Gift Shop,0,2024-10-15
+4,Food,28.42,Orlando,Walmart,0,2024-10-18
+22,Food,24.43,Orlando,Local Deli,0,2024-10-20
+14,Suspicious,1254.64,Orlando,Casino,1,2024-10-21
+18,Gas/Transportation,64.11,Orlando,Uber,0,2024-10-22
+20,Clothing/Personal,57.08,Orlando,Sephora,0,2024-10-23
+8,Subscriptions,17.63,Orlando,Gym Membership,0,2024-10-24
+6,Clothing/Personal,49.45,Orlando,Sephora,0,2024-10-26
+12,Food,16.04,Orlando,Trader Joe's,0,2024-10-27
+15,Miscellaneous,45.83,Orlando,General Store,0,2024-10-28
+13,Food,15.42,Orlando,Walmart,0,2024-10-29
+23,Food,29.77,Orlando,Local Deli,0,2024-10-30
+21,Clothing/Personal,56.53,Orlando,Sephora,0,2024-10-31
+24,Miscellaneous,1222.39,Orlando,Food,1,2024-10-31
